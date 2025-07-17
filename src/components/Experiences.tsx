@@ -1,9 +1,9 @@
 import React from 'react'
 import ExperienceCard from './UI/ExperienceCard'
-import citibankLogo from "../assets/Citibank-logo.jpg";
-import abbottLogo from "../assets/abbott.png";
-import tcsLogo from "../assets/tcs.png";
-import adaniLogo from "../assets/adani.png";
+import citibankLogo from "@/assets/Citibank-logo.jpg";
+import abbottLogo from "@/assets/abbott.png";
+import tcsLogo from "@/assets/tcs.png";
+import adaniLogo from "@/assets/adani.png";
 
 
 const Experiences = () => {

@@ -3,6 +3,8 @@ import { FaGithub } from "react-icons/fa";
 import emailjs from 'emailjs-com'
 import emailAnimation from '../assets/animations/email.json';
 import Lottie from 'lottie-react';
+import linkedin from '@/assets/linkedin.png'
+import gmail from '@/assets/gmail.png'
 
 
 const Contact = ({ currentTheme }: { currentTheme: string }) => {
@@ -90,7 +92,7 @@ const Contact = ({ currentTheme }: { currentTheme: string }) => {
                     <p className="text-teal-500 font-semibold text-lg">Connect with Me</p>
                     <div className='flex gap-4'><a href="https://www.linkedin.com/in/akanksha-pawar-neu/" target="_blank" rel="noopener noreferrer">
                         <img
-                            src="src/assets/linkedin.png"
+                            src={linkedin}
                             width="20px"
                             height="20px"
                             className="hover:scale-125 transition duration-300"
@@ -98,7 +100,7 @@ const Contact = ({ currentTheme }: { currentTheme: string }) => {
                         />
                     </a>
                         <a href="https://github.com/iakanksha2908" target="_blank" rel="noopener noreferrer" ><FaGithub size='20' className='hover:scale-125 transition duration-300' /></a>
-                        <a href="mailto:akankshapawar25@gmail.com" target="_blank" rel="noopener noreferrer"><img src="src\assets\gmail.png" width="20px" height="20px" className='hover:scale-125 transition duration-300' /></a>
+                        <a href="mailto:akankshapawar25@gmail.com" target="_blank" rel="noopener noreferrer"><img src={gmail} width="20px" height="20px" className='hover:scale-125 transition duration-300' /></a>
                     </div><p className='font-semibold text-md'>Follow me on social media or send me an email.</p>
                     <Lottie animationData={emailAnimation} loop autoplay style={{ width: 300, height: 300 }} className=' hover:scale-110 transition duration-300 mt-16' />
                 </div>

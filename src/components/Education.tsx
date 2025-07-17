@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import Lottie from 'lottie-react';
-
+import neu from '@/assets/neu.png'
+import davv from '@/assets/davv.jpg'
+import oracle from '@/assets/Oracle_Professional_Badge_final.avif'
 
 
 const Education = () => {
@@ -36,7 +38,7 @@ const Education = () => {
       <h3 className='text-black dark:text-white text-5xl font-semibold text-left m-10 ml-20'>Education</h3>
       <div>
         <div className='ml-20 flex'>
-          <img src="src\assets\neu.png" className='rounded-full w-20 h-20' />
+          <img src={neu} className='rounded-full w-20 h-20' />
           <div className='ml-10 mt-2'>
             <h3 className='font-semibold text-md'>Northeastern University</h3>
             <p>Master of Science in Computer Software Engineering</p>
@@ -46,7 +48,7 @@ const Education = () => {
         </div>
         <hr className='m-2 w-1/2' />
         <div className='ml-20 flex mt-4'>
-          <img src="src\assets\davv.jpg" className='rounded-full w-20 h-20' />
+          <img src={davv} className='rounded-full w-20 h-20' />
           <div className='ml-10 mt-2'>
             <h3 className='font-semibold text-md'>Devi Ahilya Vishwavidhyalaya</h3>
             <p>Master of Technology in Information Technology</p>
@@ -56,7 +58,7 @@ const Education = () => {
         </div>
         <hr className='m-2 w-1/2' />
         <div className='ml-20 flex mt-4'>
-          <img src="src\assets\Oracle_Professional_Badge_final.avif" className='rounded-full w-20 h-27' />
+          <img src={oracle} className='rounded-full w-20 h-27' />
           <div className='ml-10 mt-2'>
             <h3 className='font-semibold text-md'>Oracle Certified Associate, Java SE 8 Programmer</h3>
             <p>December 2024</p>
