@@ -43,3 +43,13 @@
   color: #888;
 }
 
+/* body {
+  background-color: #eaf3fb;
+}
+.dark body {
+  background-color: #0F172A;
+} */
+.perspective-1000 {
+  perspective: 1000px;
+  perspective-origin: center;
+}

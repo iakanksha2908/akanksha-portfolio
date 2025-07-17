@@ -2,12 +2,14 @@ import React from 'react';
 import Navbar from './UI/Navbar';
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { FaAnglesUp } from "react-icons/fa6";
 
 interface HomeProps {
-  scrollToSkills: () => void;
+  scrollToContact: () => void;
+  
 }
 
-const Home: React.FC<HomeProps> = ({scrollToSkills}) => {
+const Home : React.FC<HomeProps>= ({scrollToContact}) => {
   return (
       <div className=" text-gray-800 dark:text-gray-300 h-auto">
       {/* 🔹 Main Section: 2 columns */}
@@ -16,7 +18,7 @@ const Home: React.FC<HomeProps> = ({scrollToSkills}) => {
         <div className="w-1/2 flex flex-col justify-start pt-28 px-16">
           {/* your content */}
           <h1 className="text-4xl font-bold mb-4 flex items-center gap-2 font-tomorrow mt-10 dark:text-white">Hi, I'm Akanksha<img className="inline-block animate-wave origin-[70%_70%]" src="src\assets\goodbye.png" width="40px" height="40px" /></h1>
-          <p className="text-2xl font-semibold font-tomorrow mt-8 tracking-wide">
+          <p className="text-2xl font-semibold  mt-8 tracking-wide">
             - A curious mind fueled by code and creativity.
             I'm a Software Engineer with a knack for building intelligent, robust backend systems and a growing love for all things AI/ML.
             From designing scalable APIs to experimenting with language models, I enjoy bridging engineering with innovation.
@@ -48,7 +50,7 @@ const Home: React.FC<HomeProps> = ({scrollToSkills}) => {
   backdrop-blur-md shadow-lg
   hover:bg-teal-400/30 hover:shadow-xl
   hover:scale-105 transition duration-300 font-semibold
-  ">
+  " onClick={() => scrollToContact()}> 
               Get in touch</button>
             <a href="https://drive.google.com/drive/u/0/folders/1oaMIwX0YdD4ulhVwDF1jp1Ets_WHb3fq" target="_blank" rel="noopener noreferrer">
               <button className="

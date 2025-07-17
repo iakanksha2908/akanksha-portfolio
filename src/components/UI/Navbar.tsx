@@ -4,8 +4,14 @@ import Theme from './Theme';
 
 interface NavbarProps {
     scrollToSkills: () => void;
-}
-const Navbar: React.FC<NavbarProps> = ({scrollToSkills}) => {
+    scrollToWorkEx: () => void;
+    scrollToEducation: () => void;
+    scrollToProjects: () => void;
+    scrollToContact: () => void;
+ }
+
+
+const Navbar: React.FC<NavbarProps> = ({scrollToSkills, scrollToWorkEx, scrollToEducation, scrollToProjects, scrollToContact}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -18,10 +24,15 @@ const Navbar: React.FC<NavbarProps> = ({scrollToSkills}) => {
             <div className="hidden md:flex gap-10 text-xl">
                 <button  className="hover:text-pink-300" onClick={() => {scrollToSkills(); toggleMenu(); }}>Skills</button>
                 {/* <a href="#about" className="hover:text-pink-300">Skills</a> */}
-                <a href="#projects" className="hover:text-pink-300">Work Experiences</a>
-                <a href="#contact" className="hover:text-pink-300">Education</a>
-                <a href="#contact" className="hover:text-pink-300">Achievements</a>
-                <a href="#contact" className="hover:text-pink-300">Contact Me</a>
+                <button  className="hover:text-pink-300" onClick={() => {scrollToWorkEx(); toggleMenu(); }}>Work Experiences</button>
+                <button  className="hover:text-pink-300" onClick={() => {scrollToEducation(); toggleMenu(); }}>Education</button>
+                <button  className="hover:text-pink-300" onClick={() => {scrollToProjects(); toggleMenu(); }}>Projects</button>
+                <button  className="hover:text-pink-300" onClick={() => {scrollToContact(); toggleMenu(); }}>Contact</button>
+               
+                {/* <a href="#projects" className="hover:text-pink-300">Work Experiences</a> */}
+                {/* <a href="#contact" className="hover:text-pink-300">Education</a> */}
+                {/* <a href="#contact" className="hover:text-pink-300">Achievements</a> */}
+                {/* <a href="#contact" className="hover:text-pink-300">Contact Me</a> */}
                 {/* <label
                     htmlFor="AcceptConditions"
                     className="relative block h-8 w-14 rounded-full bg-gray-300 transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-green-500 dark:bg-gray-600 dark:has-checked:bg-green-600"
