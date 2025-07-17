@@ -1,17 +1,44 @@
 <!doctype html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="./logo.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/png;base64,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" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akanksha Pawar | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Great+Vibes&family=Love+Light&family=Mrs+Saint+Delafield&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Felipa&family=Great+Vibes&family=Love+Light&family=Mrs+Saint+Delafield&family=Quintessential&display=swap');
+  </style>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
   <script type="module" crossorigin src="/akanksha-portfolio/assets/index-b9df1a15.js"></script>
   <link rel="stylesheet" href="/akanksha-portfolio/assets/index-45cc9cb4.css">
 </head>
+
 <body>
   <div id="root"></div>
+  <div id="vanta-bg"></div>
   
-  <!-- ✅ Local development uses main.tsx -->
-  
+  <script>
+    // Initialize Vanta.js after the page loads
+    window.addEventListener('load', function() {
+      if (window.VANTA && window.THREE) {
+        VANTA.NET({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          points: 6.00
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
