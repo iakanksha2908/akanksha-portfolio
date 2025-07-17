@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/akanksha-portfolio/',
   plugins: [react()],
   resolve: {
     alias: {
