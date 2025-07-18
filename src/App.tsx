@@ -55,67 +55,33 @@ function App() {
             />
           </header>
 
-          {/* <motion.div
-            initial={{ opacity: 0, rotateX: 120 }}
-            whileInView={{ opacity: 1, rotateX: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          > */}
+          {/* ✅ Vanta background section */}
+          <div id="vanta-bg" className="relative z-0">
             <Home scrollToContact={scrollToContact} />
-          {/* </motion.div> */}
-
-          <motion.div
-            ref={skillsRef}
-            initial={{ opacity: 0, y: 80 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          >
-            <WhatIDo />
-          </motion.div>
-
-          {/* <motion.div
-            ref={workExRef}
-            initial={{ opacity: 0, rotateY: 120 }}
-            whileInView={{ opacity: 1, rotateY: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          > */}
-          <div ref={workExRef}>
-            <Experiences />
           </div>
-          {/* </motion.div> */}
 
-          <motion.div
-            ref={educationRef}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          >
-            <Education />
-          </motion.div>
+          {/* ✅ Other sections */}
+          <div className="relative z-10">
+            <motion.div ref={skillsRef} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+              <WhatIDo />
+            </motion.div>
 
-          {/* <motion.div
-            ref={projectRef}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          > */}
-          <div ref={projectRef}>
-            <Projects /></div>
-          {/* </motion.div> */}
+            <div ref={workExRef}>
+              <Experiences />
+            </div>
 
-          <motion.div
-            ref={contactRef}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            viewport={{ amount: 0.3 }}
-          >
-            <Contact currentTheme={currentTheme} />
-          </motion.div>
+            <motion.div ref={educationRef} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+              <Education />
+            </motion.div>
+
+            <div ref={projectRef}>
+              <Projects />
+            </div>
+
+            <motion.div ref={contactRef} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+              <Contact currentTheme={currentTheme} />
+            </motion.div>
+          </div>
 
           <div className="fixed bottom-4 right-4 z-50">
             <ScrollToTop />

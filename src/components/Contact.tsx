@@ -51,7 +51,7 @@ const Contact = ({ currentTheme }: { currentTheme: string }) => {
                     gyroControls: false,
                     minHeight: 200.00,
                     minWidth: 200.00,
-                    scale: 1.00,
+                    scale: 0.75,
                     scaleMobile: 1.00,
                     color: 0x952742,
                     backgroundColor: 0x0,

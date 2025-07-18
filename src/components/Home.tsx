@@ -6,6 +6,7 @@ import { FaAnglesUp } from "react-icons/fa6";
 import goodbye from "@/assets/goodbye.png";
 import profile from "@/assets/profile_photo.jpeg";
 import linkedin from "@/assets/linkedin.png";
+import gmail from "@/assets/gmail.png";
 
 
 interface HomeProps {
@@ -43,7 +44,7 @@ const Home : React.FC<HomeProps>= ({scrollToContact}) => {
             <a href="https://www.linkedin.com/in/akanksha-pawar-neu/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} width="40px" height="40px" className='hover:scale-125 transition duration-300' /></a>
             <a href="https://github.com/iakanksha2908" target="_blank" rel="noopener noreferrer" ><FaGithub size='40' className='hover:scale-125 transition duration-300' /></a>
-            <a href="mailto:akankshapawar25@gmail.com" target="_blank" rel="noopener noreferrer"><img src="src\assets\gmail.png" width="40px" height="40px" className='hover:scale-125 transition duration-300' /></a>
+            <a href="mailto:akankshapawar25@gmail.com" target="_blank" rel="noopener noreferrer"><img src={gmail} width="40px" height="40px" className='hover:scale-125 transition duration-300' /></a>
             <a href="https://leetcode.com/u/iakanksha290896/" target="_blank" rel="noopener noreferrer"><SiLeetcode size='40' className='hover:scale-125 transition duration-300' /></a>
           </span>
           <span className='flex gap-10'>
@@ -56,7 +57,7 @@ const Home : React.FC<HomeProps>= ({scrollToContact}) => {
   hover:scale-105 transition duration-300 font-semibold
   " onClick={() => scrollToContact()}> 
               Get in touch</button>
-            <a href="https://drive.google.com/drive/u/0/folders/1oaMIwX0YdD4ulhVwDF1jp1Ets_WHb3fq" target="_blank" rel="noopener noreferrer">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               <button className="
   mt-10 px-6 py-2 rounded-md
   bg-teal-600/30 text-black dark:text-white 
@@ -66,6 +67,7 @@ const Home : React.FC<HomeProps>= ({scrollToContact}) => {
   hover:scale-105 transition duration-300 font-semibold
   ">
                 Resume</button></a>
+                
           </span>
         </div>
       </div>
