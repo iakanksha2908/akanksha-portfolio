@@ -53,7 +53,7 @@ Error generating stack: `+r.message+`
   backdrop-blur-md shadow-lg
   hover:bg-teal-400/30 hover:shadow-xl
   hover:scale-105 transition duration-300 font-semibold
-  `,onClick:()=>e(),children:"Get in touch"}),jsxRuntimeExports.jsx("a",{href:"/resume.pdf",target:"_blank",rel:"noopener noreferrer",children:jsxRuntimeExports.jsx("button",{className:`
+  `,onClick:()=>e(),children:"Get in touch"}),jsxRuntimeExports.jsx("a",{href:"/akanksha-portfolio/resume.pdf",target:"_blank",rel:"noopener noreferrer",children:jsxRuntimeExports.jsx("button",{className:`
   mt-10 px-6 py-2 rounded-md
   bg-teal-600/30 text-black dark:text-white 
   border border-teal-300/20 
