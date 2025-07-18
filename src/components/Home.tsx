@@ -66,7 +66,7 @@ const Home : React.FC<HomeProps>= ({scrollToContact}) => {
   hover:bg-teal-400/30 hover:shadow-xl
   hover:scale-105 transition duration-300 font-semibold
   ">
-                Resume</button></a>
+                View Resume</button></a>
                 
           </span>
         </div>
