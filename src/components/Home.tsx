@@ -57,7 +57,7 @@ const Home : React.FC<HomeProps>= ({scrollToContact}) => {
   hover:scale-105 transition duration-300 font-semibold
   " onClick={() => scrollToContact()}> 
               Get in touch</button>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer">
               <button className="
   mt-10 px-6 py-2 rounded-md
   bg-teal-600/30 text-black dark:text-white 
