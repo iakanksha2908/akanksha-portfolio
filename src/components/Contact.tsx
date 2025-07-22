@@ -1,14 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { FaGithub } from "react-icons/fa";
-import emailjs from 'emailjs-com'
+import emailjs from 'emailjs-com';
 import emailAnimation from '../assets/animations/email.json';
 import Lottie from 'lottie-react';
-import linkedin from '@/assets/linkedin.png'
-import gmail from '@/assets/gmail.png'
+import linkedin from '@/assets/linkedin.png';
+import gmail from '@/assets/gmail.png';
 
 const Contact = ({ currentTheme }: { currentTheme: string }) => {
 
     const form = useRef(null);
+    const vantaRef = useRef<HTMLDivElement>(null);
+    const vantaEffect = useRef<any>(null);
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
@@ -18,19 +21,52 @@ const Contact = ({ currentTheme }: { currentTheme: string }) => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const user_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    useEffect(() => {
+        if (window.VANTA && vantaRef.current) {
+            if (currentTheme === 'dark') {
+                vantaEffect.current = window.VANTA.NET({
+                    el: vantaRef.current,
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00,
+                    scaleMobile: 1.00,
+                    color: 0x952742,
+                    backgroundColor: 0x0,
+                    maxDistance: 21.00,
+                    spacing: 12.00
+                });
+            }
+            else {
+                if (vantaEffect.current) vantaEffect.current.destroy();
+                vantaEffect.current = null;
+                vantaRef.current?.removeAttribute('style');
+            }
+        }
+        return () => {
+            if (vantaEffect.current) vantaEffect.current.destroy();
+        }
+    }, [currentTheme]);
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current || email.length === 0) return;
         emailjs.sendForm(serviceId, templateId, form.current, user_key).then(() => {
             alert('Message Sent!');
-            setName(''); setEmail(''); setSubject(''); setMessage('');
+            setName('');
+            setEmail('');
+            setSubject('');
+            setMessage('');
         }).catch((error) => {
-            alert("Failed to send: " + error.text)
-        })
-    }
+            alert("Failed to send: " + error.text);
+        });
+    };
 
     return (
-        <div className='flex flex-col space-y-8 px-4 mt-8'>
+        <div ref={vantaRef} className='flex flex-col space-y-8 px-4 mt-8'>
+
             <div className='flex flex-col items-center space-y-4'>
                 <h2 className="text-3xl sm:text-4xl font-bold text-center">Get in <span className="text-teal-500">Touch</span></h2>
                 <p className='font-semibold max-w-[500px] text-center text-sm sm:text-md'>Have a question or want to work together? I'd love to hear from you.</p>
@@ -76,4 +112,4 @@ const Contact = ({ currentTheme }: { currentTheme: string }) => {
     )
 }
 
-export default Contact
+export default Contact;
