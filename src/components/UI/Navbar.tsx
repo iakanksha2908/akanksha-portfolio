@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSkills, scrollToWorkEx, scrollT
     }, [isOpen]);
 
     return (
-        <nav className="text-black dark:text-white py-4 px-4 flex justify-between items-center sticky top-0 bg-white/20 dark:bg-[#0F172A]/70 backdrop-blur-md z-50">
+        <nav className="text-black dark:text-white py-4 px-4 flex justify-between items-center sticky top-0 bg-white/20 dark:bg-black backdrop-blur-md z-50">
             
             {/* Logo/Brand - Always visible */}
             {/* <div className="text-xl lg:text-2xl font-bold">

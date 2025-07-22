@@ -7,6 +7,7 @@ import goodbye from "@/assets/goodbye.png";
 import profile from "@/assets/profile_photo.jpeg";
 import linkedin from "@/assets/linkedin.png";
 import gmail from "@/assets/gmail.png";
+import { TypeAnimation } from 'react-type-animation';
 
 interface HomeProps {
   scrollToContact: () => void;
@@ -23,9 +24,16 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
             Hi, I'm Akanksha
             <img className="inline-block animate-wave origin-[70%_70%]" src={goodbye} width="40px" height="40px" />
           </h1>
-          <p className="text-lg sm:text-2xl font-semibold tracking-wide text-center sm:text-left leading-relaxed">
-            - Software Engineer passionate about backend systems, scalable APIs, and AI/ML. I love transforming ideas into high-impact products while focusing on clean code, learning, and solving meaningful problems.
-          </p>
+
+          <TypeAnimation
+            sequence={[
+              `- Software Engineer passionate about backend systems, scalable APIs, and AI/ML. I love transforming ideas into high-impact products while focusing on clean code, learning, and solving meaningful problems.`,
+            ]}
+            wrapper="p"
+            speed={50}
+            className="text-lg sm:text-2xl font-semibold tracking-wide text-center sm:text-left leading-relaxed"
+            repeat={0}
+          />
         </div>
 
         {/* Right Section */}
@@ -45,15 +53,16 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
             <a href="https://leetcode.com/u/iakanksha290896/" target="_blank"><SiLeetcode size={40} /></a>
           </span>
 
-          <span className='flex flex-col sm:flex-row gap-4 mt-6 w-full justify-center sm:justify-start'>
+          <span className='flex flex-col sm:flex-row gap-4 mt-6 justify-center'>
             <button
               className="px-6 py-2 rounded-md bg-teal-600/30 text-black dark:text-white border border-teal-300/20 backdrop-blur-md shadow-lg hover:bg-teal-400/30 hover:shadow-xl hover:scale-105 transition duration-300 font-semibold"
-              onClick={() => scrollToContact()}>Get in touch</button>
+              onClick={() => scrollToContact()}
+            >Get in touch</button>
+
             <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer">
               <button
-                className="px-6 py-2 rounded-md bg-teal-600/30 text-black dark:text-white border border-teal-300/20 backdrop-blur-md shadow-lg hover:bg-teal-400/30 hover:shadow-xl hover:scale-105 transition duration-300 font-semibold">
-                View Resume
-              </button>
+                className="px-6 py-2 rounded-md bg-teal-600/30 text-black dark:text-white border border-teal-300/20 backdrop-blur-md shadow-lg hover:bg-teal-400/30 hover:shadow-xl hover:scale-105 transition duration-300 font-semibold"
+              >View Resume</button>
             </a>
           </span>
         </div>
