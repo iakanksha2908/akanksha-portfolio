@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Theme from './Theme';
-
 
 interface NavbarProps {
     scrollToSkills: () => void;
@@ -8,66 +7,92 @@ interface NavbarProps {
     scrollToEducation: () => void;
     scrollToProjects: () => void;
     scrollToContact: () => void;
- }
+}
 
-
-const Navbar: React.FC<NavbarProps> = ({scrollToSkills, scrollToWorkEx, scrollToEducation, scrollToProjects, scrollToContact}) => {
+const Navbar: React.FC<NavbarProps> = ({ scrollToSkills, scrollToWorkEx, scrollToEducation, scrollToProjects, scrollToContact }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    return (
-        <nav className=" text-black dark:text-white py-4 flex justify-between items-center">
+    const closeMenuAndScroll = (scrollFunc: () => void) => {
+        scrollFunc();
+        setIsOpen(false);
+    };
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isOpen]);
+
+    return (
+        <nav className="text-black dark:text-white py-4 px-4 flex justify-between items-center sticky top-0 bg-white/20 dark:bg-[#0F172A]/70 backdrop-blur-md z-50">
+            
+            {/* Logo/Brand - Always visible */}
+            {/* <div className="text-xl lg:text-2xl font-bold">
+                <span className="bg-gradient-to-r from-pink-300 to-cyan-300 bg-clip-text text-transparent">
+                    &lt;Akanksha Pawar /&gt;
+                </span>
+            </div> */}
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-10 text-xl">
-                <button  className="hover:text-pink-300" onClick={() => {scrollToSkills(); toggleMenu(); }}>Skills</button>
-                {/* <a href="#about" className="hover:text-pink-300">Skills</a> */}
-                <button  className="hover:text-pink-300" onClick={() => {scrollToWorkEx(); toggleMenu(); }}>Work Experiences</button>
-                <button  className="hover:text-pink-300" onClick={() => {scrollToEducation(); toggleMenu(); }}>Education</button>
-                <button  className="hover:text-pink-300" onClick={() => {scrollToProjects(); toggleMenu(); }}>Projects</button>
-                <button  className="hover:text-pink-300" onClick={() => {scrollToContact(); toggleMenu(); }}>Contact</button>
-               
-                {/* <a href="#projects" className="hover:text-pink-300">Work Experiences</a> */}
-                {/* <a href="#contact" className="hover:text-pink-300">Education</a> */}
-                {/* <a href="#contact" className="hover:text-pink-300">Achievements</a> */}
-                {/* <a href="#contact" className="hover:text-pink-300">Contact Me</a> */}
-                {/* <label
-                    htmlFor="AcceptConditions"
-                    className="relative block h-8 w-14 rounded-full bg-gray-300 transition-colors [-webkit-tap-highlight-color:_transparent] has-checked:bg-green-500 dark:bg-gray-600 dark:has-checked:bg-green-600"
-                >
-                    <input type="checkbox" id="AcceptConditions" className="peer sr-only" />
-
-                    <span
-                        className="absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-6 dark:bg-gray-900"
-                    ></span>
-                </label> */}
+            <div className="hidden md:flex gap-8 text-base lg:text-xl font-semibold items-center">
+                <button className="hover:text-pink-300 transition-colors duration-200" onClick={() => scrollToSkills()}>Skills</button>
+                <button className="hover:text-pink-300 transition-colors duration-200" onClick={() => scrollToWorkEx()}>Work Experience</button>
+                <button className="hover:text-pink-300 transition-colors duration-200" onClick={() => scrollToEducation()}>Education</button>
+                <button className="hover:text-pink-300 transition-colors duration-200" onClick={() => scrollToProjects()}>Projects</button>
+                <button className="hover:text-pink-300 transition-colors duration-200" onClick={() => scrollToContact()}>Contact</button>
                 <Theme />
-
             </div>
 
-            {/* Mobile Hamburger */}
-            <div className="md:hidden">
-                <button onClick={toggleMenu} className="focus:outline-none">
-                    <div className="space-y-1">
-                        <span className="block w-6 h-0.5 bg-white"></span>
-                        <span className="block w-6 h-0.5 bg-white"></span>
-                        <span className="block w-6 h-0.5 bg-white"></span>
+            {/* Mobile Menu Toggle and Theme */}
+            <div className="md:hidden flex items-center gap-3 rounded-lg w-auto">
+                <Theme />
+                <button onClick={toggleMenu} className="focus:outline-none p-2">
+                    <div className={`space-y-1 transition-all duration-300 ${isOpen ? 'rotate-90' : ''}`}>
+                        <span className={`block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                        <span className={`block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`block w-6 h-0.5 bg-black dark:bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
                     </div>
                 </button>
             </div>
 
             {/* Mobile Menu Drawer */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-[#0F172A] flex flex-col gap-4 px-6 py-4 text-lg md:hidden z-10">
-                    <button onClick={() => {scrollToSkills(); toggleMenu(); }}>Skills</button>
-                    {/* <a href="#about" className="hover:text-orange-400" onClick={toggleMenu}>Skills</a> */}
-                    <a href="#projects" className="hover:text-orange-400" onClick={toggleMenu}>Work Experiences</a>
-                    <a href="#contact" className="hover:text-orange-400" onClick={toggleMenu}>Education</a>
-                    <a href="#contact" className="hover:text-orange-400" onClick={toggleMenu}>Achievements</a>
-                    <a href="#contact" className="hover:text-orange-400" onClick={toggleMenu}>Contact Me</a>
-                </div>
+                <>
+                    {/* Backdrop */}
+                    <div className="fixed inset-0 bg-black/50 z-[9998]" onClick={toggleMenu}></div>
+                    
+                    {/* Drawer */}
+                    <div className="fixed top-0 right-0 w-80 max-w-[80vw] h-screen bg-white dark:bg-[#0F172A] flex flex-col gap-6 px-8 py-10 text-left text-lg font-semibold z-[9999] shadow-2xl transform transition-transform duration-300">
+                        <button 
+                            onClick={toggleMenu} 
+                            className="absolute top-4 right-6 text-3xl hover:text-pink-300 transition-colors"
+                        >
+                            ×
+                        </button>
+                        
+                        <div className="mt-8">
+                            <button className="w-full text-left py-3 hover:text-pink-300 transition-colors border-b border-gray-200 dark:border-gray-700" onClick={() => closeMenuAndScroll(scrollToSkills)}>
+                                Skills
+                            </button>
+                            <button className="w-full text-left py-3 hover:text-pink-300 transition-colors border-b border-gray-200 dark:border-gray-700" onClick={() => closeMenuAndScroll(scrollToWorkEx)}>
+                                Work Experience
+                            </button>
+                            <button className="w-full text-left py-3 hover:text-pink-300 transition-colors border-b border-gray-200 dark:border-gray-700" onClick={() => closeMenuAndScroll(scrollToEducation)}>
+                                Education
+                            </button>
+                            <button className="w-full text-left py-3 hover:text-pink-300 transition-colors border-b border-gray-200 dark:border-gray-700" onClick={() => closeMenuAndScroll(scrollToProjects)}>
+                                Projects
+                            </button>
+                            <button className="w-full text-left py-3 hover:text-pink-300 transition-colors" onClick={() => closeMenuAndScroll(scrollToContact)}>
+                                Contact
+                            </button>
+                        </div>
+                    </div>
+                </>
             )}
         </nav>
     );

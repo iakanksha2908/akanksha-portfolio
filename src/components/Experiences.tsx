@@ -5,10 +5,7 @@ import abbottLogo from "@/assets/abbott.png";
 import tcsLogo from "@/assets/tcs.png";
 import adaniLogo from "@/assets/adani.png";
 
-
 const Experiences = () => {
-
-
 
     const experiencesArr = [
         {
@@ -18,9 +15,10 @@ const Experiences = () => {
             "color": "bg-gradient-to-r from-yellow-600 to-yellow-400",
             "logo": citibankLogo,
             "points": [
-                "Developed GraphQL APIs using Java and Spring Boot for 10+ microservices.",
-                "Reduced dashboard load time from 1.2s to 700ms with AWS CDK.",
-                "Achieved 100% test coverage using Mockito."
+                "Revamped React + TypeScript dashboards, cutting load time from 5s → 1.5s.",
+                "Built real-time monitoring dashboards with Kafka streams handling 500k+ transactions/hr.",
+                "Developed secure OAuth 2.0 flows improving UX by 35% and ensuring accessibility compliance.",
+                "Integrated AI-powered fraud dashboards, improving fraud detection accuracy by 95%."
             ]
         },
         {
@@ -30,9 +28,10 @@ const Experiences = () => {
             "color": "bg-gradient-to-r from-blue-600 to-blue-400",
             "logo": abbottLogo,
             "points": [
-                "Developed GraphQL APIs using Java and Spring Boot for 10+ microservices.",
-                "Reduced dashboard load time from 1.2s to 700ms with AWS CDK.",
-                "Achieved 100% test coverage using Mockito."
+                "Built React dashboards for medical analytics reducing reporting time from 4h → 30min.",
+                "Developed Spring Boot REST APIs improving data retrieval by 60%.",
+                "Secured dashboards with JWT ensuring HIPAA compliance.",
+                "Automated CI/CD using Jenkins & Docker reducing deployment time by 80%."
             ]
         },
         {
@@ -42,9 +41,10 @@ const Experiences = () => {
             "logo": tcsLogo,
             "color": "bg-gradient-to-r from-teal-600 to-teal-400",
             "points": [
-                "Developed GraphQL APIs using Java and Spring Boot for 10+ microservices.",
-                "Reduced dashboard load time from 1.2s to 700ms with AWS CDK.",
-                "Achieved 100% test coverage using Mockito."
+                "Developed 15+ Spring Boot microservices handling 10M+ daily transactions.",
+                "Built React/Angular frontends improving load speed by 35%.",
+                "Optimized SQL queries across PostgreSQL, Oracle, MongoDB reducing report time by 80%.",
+                "Designed CI/CD pipelines across AWS, Azure, GCP automating 50+ monthly deployments."
             ]
         },
         {
@@ -54,31 +54,30 @@ const Experiences = () => {
             "color": "bg-gradient-to-r from-rose-600 to-rose-400",
             "logo": adaniLogo,
             "points": [
-                "Developed GraphQL APIs using Java and Spring Boot for 10+ microservices.",
-                "Reduced dashboard load time from 1.2s to 700ms with AWS CDK.",
-                "Achieved 100% test coverage using Mockito."
+                "Developed Java Spring Boot microservices scaling renewable energy systems.",
+                "Designed Kafka pipelines for 1M+ power generation events daily.",
+                "Optimized SQL queries reducing execution time by 40% across 15+ plants."
             ]
         },
-
     ];
 
     return (
         <div>
-            <h3 className='text-black dark:text-white text-5xl font-semibold text-left m-10 ml-20 mr-20'>Experiences</h3>
-            {/* <div className='ml-20 flex p-8 m-4'> */}
-                <div className='ml-20 flex'>
-                    {experiencesArr.map((exp, index) => (<ExperienceCard key={index}
-                    company={exp.company}
-                    role={exp.role}
-                    date={exp.date}
-                    color={exp.color}
-                    logo={exp.logo} 
-                    points={exp.points}
-
-                    ></ExperienceCard>))}</div>
-                
+            <h3 className='text-black dark:text-white text-3xl sm:text-5xl font-semibold text-center sm:text-left px-6 sm:px-20 pt-10'>Experiences</h3>
+            <div className='flex flex-wrap justify-center gap-6 sm:gap-8 px-6 sm:px-20 mt-8'>
+                {experiencesArr.map((exp, index) => (
+                    <ExperienceCard
+                        key={index}
+                        company={exp.company}
+                        role={exp.role}
+                        date={exp.date}
+                        color={exp.color}
+                        logo={exp.logo}
+                        points={exp.points}
+                    />
+                ))}
+            </div>
         </div>
-
     )
 }
 
