@@ -51,7 +51,7 @@ const Education = () => {
           <div className='text-center sm:text-left'>
             <h3 className='font-semibold text-lg sm:text-xl'>Devi Ahilya Vishwavidhyalaya</h3>
             <p className='text-base'>Master of Technology in Information Technology</p>
-            <p className='text-sm text-gray-400'>July 2019 - Dec 2019</p>
+            <p className='text-sm text-gray-400'>July 2014 - Dec 2019</p>
           </div>
         </div>
 
