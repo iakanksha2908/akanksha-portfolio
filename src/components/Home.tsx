@@ -47,10 +47,10 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
           <p className="text-lg sm:text-xl font-semibold text-center">Software Engineer | Full-Stack Engineer | AI/ML</p>
 
           <span className='mt-4 flex gap-4 flex-wrap justify-center'>
-            <a href="https://www.linkedin.com/in/akanksha-pawar-neu/" target="_blank"><img src={linkedin} width="40" /></a>
-            <a href="https://github.com/iakanksha2908" target="_blank"><FaGithub size={40} /></a>
-            <a href="mailto:akankshapawar25@gmail.com" target="_blank"><img src={gmail} width="40" /></a>
-            <a href="https://leetcode.com/u/iakanksha290896/" target="_blank"><SiLeetcode size={40} /></a>
+            <a href="https://www.linkedin.com/in/akanksha-pawar-neu/" target="_blank" className="hover:scale-125 transition-transform duration-300"><img src={linkedin} width="40" /></a>
+            <a href="https://github.com/iakanksha2908" target="_blank"  className="hover:scale-125 transition-transform duration-300"><FaGithub size={40} /></a>
+            <a href="mailto:akankshapawar25@gmail.com" target="_blank" className="hover:scale-125 transition-transform duration-300"><img src={gmail} width="40" /></a>
+            <a href="https://leetcode.com/u/iakanksha290896/" target="_blank" className="hover:scale-125 transition-transform duration-300"><SiLeetcode size={40} /></a>
           </span>
 
           <span className='flex flex-col sm:flex-row gap-4 mt-6 justify-center'>
