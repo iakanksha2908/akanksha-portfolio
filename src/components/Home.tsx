@@ -18,7 +18,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
 
   let tcsOn = true;
-  let resumeVal = tcsOn === true ? `${import.meta.env.BASE_URL}resumetcs.pdf` : `${import.meta.env.BASE_URL}resume.pdf` ;
+  let resumeVal = tcsOn === true ? `${import.meta.env.BASE_URL}resumetcs.pdf` : `${import.meta.env.BASE_URL}resume.pdf`;
   return (
     <div className="text-gray-800 dark:text-gray-300 h-auto">
       <div className="flex flex-col-reverse sm:flex-row mt-0">
