@@ -18,7 +18,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
 
   let tcsOn = true;
-  let resumeVal = tcsOn === true ? `${import.meta.env.BASE_URL}resume.pdf` : `${import.meta.env.BASE_URL}resumetcs.pdf`;
+  let resumeVal = tcsOn === true ? `${import.meta.env.BASE_URL}resumetcs.pdf` : `${import.meta.env.BASE_URL}resume.pdf` ;
   return (
     <div className="text-gray-800 dark:text-gray-300 h-auto">
       <div className="flex flex-col-reverse sm:flex-row mt-0">
@@ -64,7 +64,7 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
               onClick={() => scrollToContact()}
             >Get in touch</button>
 
-            <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer">
+            <a href={resumeVal} target="_blank" rel="noopener noreferrer">
               <button
                 className="px-6 py-2 rounded-md bg-teal-600/30 text-black dark:text-white border border-teal-300/20 backdrop-blur-md shadow-lg hover:bg-teal-400/30 hover:shadow-xl hover:scale-105 transition duration-300 font-semibold"
               >View Resume</button>
