@@ -18,7 +18,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   points,
   skills
 }) => {
-
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [showGlow, setShowGlow] = useState(false);
 
@@ -106,10 +105,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <div
             key={index}
             className='flex items-center gap-1 rounded-3xl px-3 py-1 text-xs sm:text-sm
-                       border border-slate-200 bg-indigo-500/10 text-slate-900
+                       border border-slate-200 bg-indigo-700/10 text-slate-900
                        shadow-sm
 
-                       dark:border-indigo-400/30
+                       dark:border-indigo-700
                        dark:bg-indigo-600/30
                        dark:text-indigo-50
 
@@ -117,8 +116,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                        hover:bg-indigo-500/20 dark:hover:bg-indigo-500/40
                        transition-all duration-300'
           >
-            <FaTag className='text-slate-700 dark:text-indigo-300 text-xs' />
-            <span>{skill}</span>
+            <FaTag className='text-indigo-500 dark:text-indigo-300 text-xs' />
+            {skill}
           </div>
         ))}
       </div>
