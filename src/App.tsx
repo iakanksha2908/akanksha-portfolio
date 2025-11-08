@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ScrollToTop from './components/UI/ScrollToTop';
 import PortfolioLoader from './components/UI/PortfolioLoader';
+import DotGridBackground from "./DotGridBackground"; // ✨ new import
 
 function App() {
 
@@ -44,8 +45,20 @@ function App() {
         <PortfolioLoader onLoadComplete={() => setIsLoading(false)} duration={3000} />
       ) : (
         <div className="relative overflow-hidden z-0 scroll-smooth bg-[#eaf3fb] text-black dark:bg-black dark:text-white min-h-screen transition-colors duration-300 perspective-1000">
+
+          {/* ✨ Animated Dotted Background (Dark Mode Only) */}
+          {/* <div className="absolute inset-0 hidden dark:block opacity-40 transition-opacity duration-700">
+            <DotGridBackground />
+          </div> */}
+
+          {/* ✅ Navbar */}
           <header className="sticky top-0 z-50 flex justify-between items-center px-8 py-2 bg-[#eaf3fb] dark:bg-black">
-            <div className="text-4xl font-bold font-lovelight cursor-pointer" onClick={() => setIsLoading(true)}>&lt; Akanksha Pawar /&gt;</div>
+            <div
+              className="text-4xl font-bold font-lovelight cursor-pointer"
+              onClick={() => setIsLoading(true)}
+            >
+              &lt; Akanksha Pawar /&gt;
+            </div>
             <Navbar
               scrollToSkills={scrollToSkills}
               scrollToWorkEx={scrollToWorkEx}
@@ -55,14 +68,20 @@ function App() {
             />
           </header>
 
-          {/* ✅ Vanta background section */}
+          {/* ✅ Home (Vanta background section) */}
           <div id="vanta-bg" className="relative z-0">
             <Home scrollToContact={scrollToContact} />
           </div>
 
-          {/* ✅ Other sections */}
+          {/* ✅ All Other Sections */}
           <div className="relative z-10">
-            <motion.div ref={skillsRef} initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+            <motion.div
+              ref={skillsRef}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ amount: 0.3 }}
+            >
               <WhatIDo />
             </motion.div>
 
@@ -70,7 +89,13 @@ function App() {
               <Experiences />
             </div>
 
-            <motion.div ref={educationRef} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+            <motion.div
+              ref={educationRef}
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ amount: 0.3 }}
+            >
               <Education />
             </motion.div>
 
@@ -78,11 +103,18 @@ function App() {
               <Projects />
             </div>
 
-            <motion.div ref={contactRef} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ amount: 0.3 }}>
+            <motion.div
+              ref={contactRef}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ amount: 0.3 }}
+            >
               <Contact currentTheme={currentTheme} />
             </motion.div>
           </div>
 
+          {/* ✅ Scroll to Top Button */}
           <div className="fixed bottom-4 right-4 z-50">
             <ScrollToTop />
           </div>

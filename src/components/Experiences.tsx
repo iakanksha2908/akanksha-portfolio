@@ -12,7 +12,7 @@ const Experiences = () => {
             "company": "Citibank(Contract)",
             "role": "Software Engineer",
             "date": "Sept 2024 - Present",
-            "color": "bg-gradient-to-r from-yellow-600 to-yellow-400",
+            "color": "indigo",
             "logo": citibankLogo,
             "points": [
                 "Architected Java Spring Boot microservices for retail banking, integrating modular service components for loan and credit workflows handling 1.5M + daily transactions, reducing processing latency by 30%.",
@@ -31,7 +31,7 @@ const Experiences = () => {
             "company": "Abbott",
             "role": "Software Engineer",
             "date": "Jan 2023 - July 2023",
-            "color": "bg-gradient-to-r from-blue-600 to-blue-400",
+            "color": "red",
             "logo": abbottLogo,
             "points": [
                 "Developed and deployed Spring Boot microservices for Abbott’s cardiovascular diagnostics system, processing 50K+ daily telemetry requests with HIPAA-compliant data handling",
@@ -51,7 +51,7 @@ const Experiences = () => {
             "role": "Software Engineer",
             "date": "Dec 2019 - Dec 2021",
             "logo": tcsLogo,
-            "color": "bg-gradient-to-r from-teal-600 to-teal-400",
+            "color": "yellow",
             "points": [
                 "Delivered a full-stack citizen service platform using Spring Boot + React, improving data retrieval speed by 12% and enhancing UI performance for multi-department usage",
                 "Implemented Kafka-based messaging for inter-service communication, reducing data sync delays by 15% and increasing throughput across distributed systems",
