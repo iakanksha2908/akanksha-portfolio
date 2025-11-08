@@ -15,10 +15,16 @@ const Experiences = () => {
             "color": "bg-gradient-to-r from-yellow-600 to-yellow-400",
             "logo": citibankLogo,
             "points": [
-                "Revamped React + TypeScript dashboards, cutting load time from 5s → 1.5s.",
-                "Built real-time monitoring dashboards with Kafka streams handling 500k+ transactions/hr.",
-                "Developed secure OAuth 2.0 flows improving UX by 35% and ensuring accessibility compliance.",
-                "Integrated AI-powered fraud dashboards, improving fraud detection accuracy by 95%."
+                "Architected Java Spring Boot microservices for retail banking, integrating modular service components for loan and credit workflows handling 1.5M + daily transactions, reducing processing latency by 30%.",
+                "Developed responsive React + TypeScript dashboards for account management, improving UI responsiveness and analytics for 100K + monthly users across 10 + backend systems",
+                " Designed and deployed RESTful APIs and Kafka - based event streams, improving data synchronization and transaction reliability across multiple banking services",
+                "Optimized PostgreSQL queries and indexes, cutting audit report generation time by 35 % while maintaining PCI - DSS compliance for sensitive financial data",
+                "Deployed microservices on AWS EKS and EC2 with Docker, Kubernetes, and CloudFormation, ensuring high availability and multi - region scalability",
+                "Integrated monitoring through Prometheus, Grafana, and AWS CloudWatch, reducing MTTR by 20 % and improving system observability across 50 + internal apps",
+            ],
+            "skills": [
+                "Java", "Spring Boot", "React", "Angular", "TypeScript",
+                "PostgreSQL", "Kafka", "AWS", "REST APIs", "Microservices Architecture"
             ]
         },
         {
@@ -28,10 +34,16 @@ const Experiences = () => {
             "color": "bg-gradient-to-r from-blue-600 to-blue-400",
             "logo": abbottLogo,
             "points": [
-                "Built React dashboards for medical analytics reducing reporting time from 4h → 30min.",
-                "Developed Spring Boot REST APIs improving data retrieval by 60%.",
-                "Secured dashboards with JWT ensuring HIPAA compliance.",
-                "Automated CI/CD using Jenkins & Docker reducing deployment time by 80%."
+                "Developed and deployed Spring Boot microservices for Abbott’s cardiovascular diagnostics system, processing 50K+ daily telemetry requests with HIPAA-compliant data handling",
+                "Built an interactive React clinical portal for diabetes care, streamlining clinician workflows and saving 2–3 hours weekly through real-time dashboards",
+                "Provisioned AWS S3, Route 53, and CloudWatch for nutritional product data management, maintaining 200K+ records with 99.9% uptime",
+                "Optimized PostgreSQL schema and queries, reducing report generation time by 60% for neuromodulation telemetry analytics",
+                "Implemented Kafka pipelines for real-time diagnostic synchronization, cutting data latency from 15 mins to 5 mins and improving decision accuracy",
+                "Automated CI/CD pipelines using Jenkins and GitHub Actions, reducing deployment cycles from 7 days to 3 days and achieving 90% test coverage with JUnit and Mockito"
+            ],
+            "skills": [
+                "Java", "Spring Boot", "React", "PostgreSQL",
+                "Kafka", "AWS", "Jenkins", "GitHub Actions", "JUnit", "Mockito", "Microservices",
             ]
         },
         {
@@ -41,24 +53,21 @@ const Experiences = () => {
             "logo": tcsLogo,
             "color": "bg-gradient-to-r from-teal-600 to-teal-400",
             "points": [
-                "Developed 15+ Spring Boot microservices handling 10M+ daily transactions.",
-                "Built React/Angular frontends improving load speed by 35%.",
-                "Optimized SQL queries across PostgreSQL, Oracle, MongoDB reducing report time by 80%.",
-                "Designed CI/CD pipelines across AWS, Azure, GCP automating 50+ monthly deployments."
+                "Delivered a full-stack citizen service platform using Spring Boot + React, improving data retrieval speed by 12% and enhancing UI performance for multi-department usage",
+                "Implemented Kafka-based messaging for inter-service communication, reducing data sync delays by 15% and increasing throughput across distributed systems",
+                "Deployed microservices on AWS EC2 with Docker and CloudWatch, cutting incident recovery time from 40 mins to 28 mins through proactive alerts",
+                "Optimized REST APIs and PostgreSQL backends, increasing data accuracy and reducing duplicate fetches by 10%",
+                "Automated CI/CD pipelines via Jenkins, boosting release frequency from biweekly to weekly and minimizing rollback incidents",
+                "Refactored legacy monolithic modules into Dockerized microservices, reducing developer onboarding time by 25% and ensuring better code maintainability under Agile DevOps practices",
+            ],
+            "skills": [
+                "Java", "Spring Boot", "React", "PostgreSQL",
+                "Kafka", "Docker", "AWS",
+                "Jenkins", "REST APIs", "Microservices",
+                "Agile DevOps", "CI/CD Automation"
             ]
         },
-        {
-            "company": "Adani Group",
-            "role": "Software Engineer",
-            "date": "June 2019 - Dec 2019",
-            "color": "bg-gradient-to-r from-rose-600 to-rose-400",
-            "logo": adaniLogo,
-            "points": [
-                "Developed Java Spring Boot microservices scaling renewable energy systems.",
-                "Designed Kafka pipelines for 1M+ power generation events daily.",
-                "Optimized SQL queries reducing execution time by 40% across 15+ plants."
-            ]
-        },
+
     ];
 
     return (
@@ -74,6 +83,7 @@ const Experiences = () => {
                         color={exp.color}
                         logo={exp.logo}
                         points={exp.points}
+                        skills={exp.skills} 
                     />
                 ))}
             </div>

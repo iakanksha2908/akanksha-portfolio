@@ -32,8 +32,7 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
 
           <TypeAnimation
             sequence={[
-              `- Software Engineer passionate about backend systems, scalable APIs, and AI/ML. I love transforming ideas into high-impact products while focusing on clean code, learning, and solving meaningful problems.`,
-            ]}
+              "- Software Engineer passionate about full-stack development, scalable backend systems, and intuitive user experiences. I love transforming ideas into high-impact products while focusing on clean code, continuous learning, and solving meaningful problems."]}
             wrapper="p"
             speed={50}
             className="text-lg sm:text-2xl font-semibold tracking-wide text-center sm:text-left leading-relaxed"
@@ -53,7 +52,7 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
 
           <span className='mt-4 flex gap-4 flex-wrap justify-center'>
             <a href="https://www.linkedin.com/in/akanksha-pawar-neu/" target="_blank" className="hover:scale-125 transition-transform duration-300"><img src={linkedin} width="40" /></a>
-            <a href="https://github.com/iakanksha2908" target="_blank"  className="hover:scale-125 transition-transform duration-300"><FaGithub size={40} /></a>
+            <a href="https://github.com/iakanksha2908" target="_blank" className="hover:scale-125 transition-transform duration-300"><FaGithub size={40} /></a>
             <a href="mailto:akankshapawar25@gmail.com" target="_blank" className="hover:scale-125 transition-transform duration-300"><img src={gmail} width="40" /></a>
             <a href="https://leetcode.com/u/iakanksha290896/" target="_blank" className="hover:scale-125 transition-transform duration-300"><SiLeetcode size={40} /></a>
           </span>
@@ -64,11 +63,11 @@ const Home: React.FC<HomeProps> = ({ scrollToContact }) => {
               onClick={() => scrollToContact()}
             >Get in touch</button>
 
-            {/* <a href={resumeVal} target="_blank" rel="noopener noreferrer">
+            <a href={resumeVal} target="_blank" rel="noopener noreferrer">
               <button
                 className="px-6 py-2 rounded-md bg-teal-600/30 text-black dark:text-white border border-teal-300/20 backdrop-blur-md shadow-lg hover:bg-teal-400/30 hover:shadow-xl hover:scale-105 transition duration-300 font-semibold"
               >View Resume</button>
-            </a> */}
+            </a>
           </span>
         </div>
       </div>
