@@ -7,7 +7,18 @@ import adaniLogo from "@/assets/adani.png";
 
 const Experiences = () => {
 
-    const experiencesArr = [
+type ExperienceItem = {
+  company: string;
+  role: string;
+  date: string;
+  logo: string;
+  color: "indigo" | "yellow" | "red";
+  points: string[];
+  skills: string[];
+};
+
+
+    const experiencesArr:  ExperienceItem[] = [
         {
             "company": "Citibank(Contract)",
             "role": "Software Engineer",
